@@ -1,0 +1,70 @@
+@import '../../styles/global.sass'
+
+.about
+  background-color: #eee
+  display: flex
+  justify-content: center
+  padding-left: 2em
+  padding-right: 2em
+  margin: 0
+  gap: 1em
+
+.about-name
+  color: black
+  font-size: 1.8em
+
+.about-sup
+  color: orange
+
+.about-description-container
+  display: flex
+  width: 100vw
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  animation: makeSpaceForImage 0.3s linear
+  animation-fill-mode: forwards
+
+.about-description
+  width: 70%
+  color: #888
+  background-color: #eee
+  padding: 1em
+  //display: flex
+  //justify-content: center
+  text-align: left
+  margin: 0
+  z-index: 1
+
+.about-description-first-paragraph
+  margin-top: 1em
+  text-align: center
+
+.about-link-inline
+
+.image-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  background-color: #eee
+  margin: 0
+  padding: 0
+
+@keyframes makeSpaceForImage
+  0%
+    margin-top: 0
+  50%
+    margin-top: 20px
+  100%
+    margin-top: 70px
+
+.image
+  position: absolute
+  width: 0
+  height: auto
+  margin-top: 100px
+  // Animation in the JS because i want to wait for othe animation to end
+  //animation: showImage 1.8s linear
+  //animation-fill-mode: forwards
+
