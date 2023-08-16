@@ -4,9 +4,16 @@
   display: flex
   flex-direction: row
   justify-content: space-between
-  background-color: black
+  background-color: $color-background-tertiary
   width: 100vw
+  position: sticky
   //color: white
+
+@media (max-width: 768px) 
+  .header-container 
+    position: sticky
+    top: 0
+    z-index: 10
 
 
 .logo-container 
@@ -29,4 +36,5 @@
   gap: 1em
   margin-right: 10px
 
-
+.nav-link
+  color: $color-accent

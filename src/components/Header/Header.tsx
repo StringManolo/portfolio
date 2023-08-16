@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Header.module.sass';
 
-const generateSVG = (text, numberOfShapes) => {
+import { useLanguage } from '../Translation/LanguageContext';
+
+const generateSVG = (text: string, numberOfShapes: number) => {
   const getRandomFont = () => {
     const fonts = [
       "Arial",
@@ -30,7 +32,7 @@ const generateSVG = (text, numberOfShapes) => {
     return color;
   }
 
-  const getRandomNumber = (min, max) => {
+  const getRandomNumber = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
@@ -148,6 +150,8 @@ const generateSVG = (text, numberOfShapes) => {
 
 
 const Header = () => {
+  const { language, translations } = useLanguage();
+
   // preload the image without animations
   const [logoData, setLogoData] = useState(
     'data:image/svg+xml;base64,' 
@@ -170,7 +174,7 @@ const Header = () => {
   };
 
 
-/*
+/*// Animate constantly
   const [logoData, setLogoData] = useState(`data:image/svg+xml;base64,${generateSVG('StringManolo', 2)}`);
 
   useEffect(() => {
@@ -192,9 +196,9 @@ const Header = () => {
       </div>
       <nav className={styles['nav-container']}>
         <ul className={styles['nav-ul']}>
-          <li><a className={styles['nav-link']} href="#about">About</a></li>
-          <li><a className={styles['nav-link']} href="#projects">Projects</a></li>
-          <li><a className={styles['nav-link']} href="#contact">Contact</a></li>
+          <li><a className={styles['nav-link']} href="#about">{translations[language]['header-about']}</a></li>
+          <li><a className={styles['nav-link']} href="#projects">{translations[language]['header-projects']}</a></li>
+          <li><a className={styles['nav-link']} href="#contact">{translations[language]['header-contact']}</a></li>
         </ul>
       </nav>
     </header>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import telegramIcon from '../../assets/footer_icons/telegram.svg';
 import linkedinIcon from '../../assets/footer_icons/linkedin.svg';
 import twitterIcon from '../../assets/footer_icons/twitterx.svg';
