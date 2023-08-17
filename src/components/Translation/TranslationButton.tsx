@@ -26,7 +26,7 @@ const TranslationButton = () => {
 
       //if (contentHeight < windowHeight) {
       // @ts-ignore
-      content.style.height = windowHeight + 'px';
+      content.style.height = windowHeight - 51 + 'px';
       //}
     }
 
