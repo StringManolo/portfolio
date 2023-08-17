@@ -1,14 +1,17 @@
 @import '../../styles/global.sass'
 
 .projects-container
-  //background-color: blue
-  //display: flex
-  //flex-direction: column
-  //justify-content: center
-  //align-items: center
   background-color: $color-background-tertiary
   padding: 3em
   padding-top: 1em
+  display: flex
+  flex-direction: column
+  justify-content: center
+  //align-items: center
+
+@media (max-width: 768px)
+  .projects-container
+    align-items: center
 
 .header
 
