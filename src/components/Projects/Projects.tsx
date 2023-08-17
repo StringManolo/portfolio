@@ -1,5 +1,4 @@
-import React from 'react';
-import { useLanguage } from '../Translation/LanguageContext';
+import {useLanguage} from '../Translation/LanguageContext';
 
 import styles from './Projects.module.sass';
 
@@ -15,130 +14,124 @@ import h1337 from '../../assets/1337.webp';
 import cppjs from '../../assets/cppjs.webp';
 import ff2 from '../../assets/ff2.webp';
 
-
-interface Project {
-  name: string;
-  //description: string;
-  image: string;
-  link: string;
-}
+type Project = {
+	name: string;
+	// Description: string;
+	image: string;
+	link: string;
+};
 
 const projects: Project[] = [
-  {
-    name: 'Termux Hacking 101',
-    //description: 'Book about basic/advanced hacking on Termux',
-    image: termux,
-    link: 'https://stringmanolo.github.io/hackingTermux101/'
-  },
-  {
-    name: 'Pidgeon',
-    //description: 'Anonymous messaging server with multiple clients',
-    image: pidgeon,
-    link: 'https://stringmanolo.github.io/pidgeon/'
-  },
-  {
-    name: 'SmallOS Cyberwarfare',
-    //description: 'Linux distribution for cyber warfare scenarios',
-    image: soscw,
-    link: 'https://github.com/smallOS-cyberwarfare/smallOS-cyberwarfare'
-  },
-  {
-    name: 'Nbmxbsf',
-    //description: 'Telegram bot with PE, ransomware, etc modules',
-    image: nbmxbsf,
-    link: 'https://github.com/StringManolo/nbmxbsf'
-  },
-  {
-    name: 'Telegram Bot Sh',
-    //description: 'Telegram bot written in Bash',
-    image: tgbotsh,
-    link: 'https://github.com/StringManolo/tgbot.sh'
-  },
-  {
-    name: 'Ngrok Open Source',
-    //description: 'Open-source client for Ngrok service',
-    image: ngrok,
-    link: 'https://github.com/StringManolo/ngrok'
-  },
-  {
-    name: '0pen Private 5earch',
-    //description: 'Fullstack search engine',
-    image: op5,
-    link: 'https://github.com/StringManolo/0P5#video-preview'
-  },
-  {
-    name: 'Simple Arguments Parser',
-    //description: 'Library/Module to create CLI tools with JS or TS',
-    image: sap,
-    link: 'https://github.com/StringManolo/simpleArgumentsParser'
-  },
-  {
-    name: '1337',
-    //description: 'Collection of utilities in JS for hacking',
-    image: h1337,
-    link: 'https://github.com/StringManolo/1337'
-  },
-  {
-    name: 'CppJs',
-    //description: 'Library for programming in C++ using JS-like syntax sugar',
-    image: cppjs,
-    link: 'https://github.com/StringManolo/cppjs'
-  },
-  {
-    name: 'Fast Framework',
-    //description: 'Minimal web framework that doesn\'t require compilation/transpilation',
-    image: ff2,
-    link: 'https://github.com/StringManolo/ff2'
-  }
+	{
+		name: 'Termux Hacking 101',
+		// Description: 'Book about basic/advanced hacking on Termux',
+		image: termux,
+		link: 'https://stringmanolo.github.io/hackingTermux101/',
+	},
+	{
+		name: 'Pidgeon',
+		// Description: 'Anonymous messaging server with multiple clients',
+		image: pidgeon,
+		link: 'https://stringmanolo.github.io/pidgeon/',
+	},
+	{
+		name: 'SmallOS Cyberwarfare',
+		// Description: 'Linux distribution for cyber warfare scenarios',
+		image: soscw,
+		link: 'https://github.com/smallOS-cyberwarfare/smallOS-cyberwarfare',
+	},
+	{
+		name: 'Nbmxbsf',
+		// Description: 'Telegram bot with PE, ransomware, etc modules',
+		image: nbmxbsf,
+		link: 'https://github.com/StringManolo/nbmxbsf',
+	},
+	{
+		name: 'Telegram Bot Sh',
+		// Description: 'Telegram bot written in Bash',
+		image: tgbotsh,
+		link: 'https://github.com/StringManolo/tgbot.sh',
+	},
+	{
+		name: 'Ngrok Open Source',
+		// Description: 'Open-source client for Ngrok service',
+		image: ngrok,
+		link: 'https://github.com/StringManolo/ngrok',
+	},
+	{
+		name: '0pen Private 5earch',
+		// Description: 'Fullstack search engine',
+		image: op5,
+		link: 'https://github.com/StringManolo/0P5#video-preview',
+	},
+	{
+		name: 'Simple Arguments Parser',
+		// Description: 'Library/Module to create CLI tools with JS or TS',
+		image: sap,
+		link: 'https://github.com/StringManolo/simpleArgumentsParser',
+	},
+	{
+		name: '1337',
+		// Description: 'Collection of utilities in JS for hacking',
+		image: h1337,
+		link: 'https://github.com/StringManolo/1337',
+	},
+	{
+		name: 'CppJs',
+		// Description: 'Library for programming in C++ using JS-like syntax sugar',
+		image: cppjs,
+		link: 'https://github.com/StringManolo/cppjs',
+	},
+	{
+		name: 'Fast Framework',
+		// Description: 'Minimal web framework that doesn\'t require compilation/transpilation',
+		image: ff2,
+		link: 'https://github.com/StringManolo/ff2',
+	},
 ];
 
+const ProjectCard: React.FC<Project> = ({name, /* description, */ image, link}) => {
+	const {translations, language} = useLanguage();
 
-const ProjectCard: React.FC<Project> = ({ name, /*description,*/ image, link }) => {
-  const { translations, language } = useLanguage();
-
-  return (  
-    <div className={styles['project-card']}>
-      <a className={styles['project-link']} href={link}>
-      <h2 className={styles['project-name']}>{name}</h2>
-      <p className={styles['project-description']}>
-        {translations[language]['projects-'+name+'-description']}
-      </p>
-      <div className={styles['project-image-container']}>
-        <img className={styles['project-image']} src={image} alt={name} loading="lazy" />
-      </div>
-      </a>
-    </div>
-  );
-}
-
-const ProjectsList: React.FC = () => {
-  return (
-    <ul className={styles['projects-list']}>
-      {projects.map(project => (
-        <li key={project.name}>
-          <ProjectCard {...project} />
-        </li>
-      ))}
-    </ul>
-  );
+	return (
+		<div className={styles['project-card']}>
+			<a className={styles['project-link']} href={link}>
+				<h2 className={styles['project-name']}>{name}</h2>
+				<p className={styles['project-description']}>
+					{translations[language]['projects-' + name + '-description']}
+				</p>
+				<div className={styles['project-image-container']}>
+					<img className={styles['project-image']} src={image} alt={name} />
+				</div>
+			</a>
+		</div>
+	);
 };
 
-/* TODO: Extract footer */
+const ProjectsList: React.FC = () => (
+	<ul className={styles['projects-list']}>
+		{projects.map(project => (
+			<li key={project.name}>
+				<ProjectCard {...project} />
+			</li>
+		))}
+	</ul>
+);
+
 const Projects: React.FC = () => {
-  const { translations, language } = useLanguage();
+	const {translations, language} = useLanguage();
 
-  return(
-    <div className={styles['projects-container']} id="projects">
-      <header className={styles['header']}>
-        <h1 className={styles['header-title']}>{translations[language]['header-projects']}</h1>
-      </header>
-      <main>
-        <ProjectsList />
-      </main>
-    </div>
-  );
+	return (
+		<div className={styles['projects-container']} id='projects'>
+			<header className={styles.header}>
+				<h1 className={styles['header-title']}>{translations[language]['header-projects']}</h1>
+			</header>
+			<main>
+				<ProjectsList />
+			</main>
+		</div>
+	);
 };
-
 
 export default Projects;
 
