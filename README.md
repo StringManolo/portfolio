@@ -7,8 +7,9 @@ Repository for StringManolo's portfolio
 * [Installation](#installation)
 * [Usage](#usage)
 * [Technologies](https://github.com/StringManolo/portfolio/blob/main/TECHNOLOGIES.md) -> TECHNOLOGIES.md
-* [License](#license)
 * [Tests](#tests)
+* [License](#license)
+
 
 ## Installation
 ```bash
@@ -23,10 +24,10 @@ npm run dev
 # open http://localhost:5173 in your browser
 ```
 
-## License
-MIT
-
 ## Tests
 ```bash
 npm test
 ```
+
+## License
+MIT
