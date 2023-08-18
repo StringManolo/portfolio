@@ -3,6 +3,7 @@ import linkedinIcon from '../../assets/footer_icons/linkedin.svg';
 import twitterIcon from '../../assets/footer_icons/twitterx.svg';
 import ehnIcon from '../../assets/footer_icons/ehn.svg';
 import gmailIcon from '../../assets/footer_icons/gmail.svg';
+import githubIcon from '../../assets/footer_icons/github.svg';
 
 import styles from './Footer.module.sass';
 
@@ -27,9 +28,7 @@ const Footer = () => (
 		</nav>
 		<div className={styles['sponsor-badge']}>
 			<a href='https://github.com/sponsors/stringmanolo' target='_blank' rel='noreferrer'>
-				<img
-					src='https://img.shields.io/static/v1?label=Sponsor&message=GitHub&color=green&logo=github'
-					alt='Sponsor on GitHub'
+				<img src={githubIcon} alt='Sponsor on GitHub'
 				/>
 			</a>
 		</div>
