@@ -6,6 +6,7 @@ Repository for StringManolo's portfolio
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* [Technologies](https://github.com/StringManolo/portfolio/blob/main/TECHNOLOGIES.md) -> TECHNOLOGIES.md
 * [License](#license)
 * [Tests](#tests)
 
