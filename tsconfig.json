@@ -18,9 +18,17 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Testing */
+    "esModuleInterop": true
 
   },
-  "include": ["src", "./vite.config.ts"],
+  "include": [
+    "src",
+    "tests",
+    "./vite.config.ts"
+  ],
+
   "references": [{ "path": "./tsconfig.node.json" }]
 }

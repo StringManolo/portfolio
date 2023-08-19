@@ -21,9 +21,6 @@ Linter configured to force xo-style in TypeScript
 - Vite  
 Build tool  
 
-- Vitest  
-Test runner 
-
 - Git  
 Version control  
 
